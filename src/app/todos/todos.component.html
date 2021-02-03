@@ -1,0 +1,26 @@
+<div class="todos-box">
+
+  <input 
+    class="todos-input" type="text"
+    placeholder="Todos..."
+    aria-label="add todo"
+    #newTodo
+    (keyup.enter)="addTodos(newTodo.value); newTodo.value='' "
+    (blur)="addTodos(newTodo.value); newTodo.value='' "
+  >
+
+  <button class="todos-button" (click)="addTodos(newTodo.value)">add +</button>
+  
+</div>
+<div class="border"></div>
+<ul class="todos-item">
+  <li class="todo-list" *ngFor="let todoArray of todosArray; let i = index">
+
+    <input type="checkbox" aria-label="completed todo"
+      (click)="isCompleted(i)"
+    >
+    <p>{{ todoArray.newTodo }}</p>
+    <button class="remove-todo" (click)="removeTodo(i)">remove</button>
+
+  </li>
+</ul>

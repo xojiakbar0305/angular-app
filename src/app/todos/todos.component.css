@@ -1,0 +1,55 @@
+.todos-box {
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.border {
+  border-bottom: 2px solid grey;
+  margin-top: 40px;
+}
+.todos-input {
+  width: 100%;
+  outline: none;
+  padding: 10px 10px;
+}
+.todos-button {
+  margin-left: 10px;
+  cursor: pointer;
+  outline: none;
+  background-color: cornflowerblue;
+  width: 10%;
+  padding: 11px 11px;
+  border-radius: 5px;
+  border: 0;
+  color: #fff;
+}
+.todos-item {
+  list-style-type: none;
+  width: 800px;
+  margin: 50px auto 0 auto;
+  padding: 0;
+}
+.todo-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid grey;
+  padding: 20px;
+  border-radius: 10px;
+}
+p {
+  width: 600px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 0;
+}
+.remove-todo {
+  background-color: cornflowerblue;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  padding: 5px 10px;
+}
