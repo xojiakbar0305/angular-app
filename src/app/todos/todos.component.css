@@ -36,6 +36,7 @@
   align-items: center;
   border: 1px solid grey;
   padding: 20px;
+  font-size: 20px;
   border-radius: 10px;
 }
 p {
@@ -45,6 +46,7 @@ p {
   margin: 0;
 }
 .remove-todo {
+  display: inline-flex;
   background-color: cornflowerblue;
   border: 0;
   border-radius: 5px;
@@ -52,4 +54,11 @@ p {
   outline: none;
   cursor: pointer;
   padding: 5px 10px;
+}
+li.bg {
+  background-color: red;
+}
+.text.done  {
+  text-decoration: line-through;
+  color: #fff;
 }

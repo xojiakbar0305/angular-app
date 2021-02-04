@@ -1,26 +1,24 @@
-<div class="todos-box">
-
+<form class="todos-box" (submit)="addTodo()">
   <input 
-    class="todos-input" type="text"
-    placeholder="Todos..."
+    class="todos-input" 
+    type="text" 
+    name="inputTodo" 
+    placeholder="Enter Todo..." 
     aria-label="add todo"
-    #newTodo
-    (keyup.enter)="addTodos(newTodo.value); newTodo.value='' "
-    (blur)="addTodos(newTodo.value); newTodo.value='' "
-  >
+    [(ngModel)]="inputTodo"
+  />
+  <!-- <button class="todos-button">add +</button> -->
+  <input type="submit" value="Add Todo" class="todos-button" />
+</form>
 
-  <button class="todos-button" (click)="addTodos(newTodo.value)">add +</button>
-  
-</div>
+
 <div class="border"></div>
 <ul class="todos-item">
-  <li class="todo-list" *ngFor="let todoArray of todosArray; let i = index">
-
-    <input type="checkbox" aria-label="completed todo"
-      (click)="isCompleted(i)"
-    >
-    <p>{{ todoArray.newTodo }}</p>
-    <button class="remove-todo" (click)="removeTodo(i)">remove</button>
+  <li *ngFor="let todo of todos; let i = index" class="todo-list {{ (todo.completed ? 'bg' : '') }}">
+    <input type="checkbox" placeholder="todo checked" (click)="toggleDone(i)">
+    <span>{{ i + 1 }}</span>
+    <p class="text {{ (todo.completed ? 'done' : '') }}">{{ todo.content }}</p>
+    <button class="remove-todo" (click)="deleteTodo(i)">remove</button>
 
   </li>
 </ul>
