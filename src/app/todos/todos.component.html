@@ -7,7 +7,6 @@
     aria-label="add todo"
     [(ngModel)]="inputTodo"
   />
-  <!-- <button class="todos-button">add +</button> -->
   <input type="submit" value="Add Todo" class="todos-button" />
 </form>
 
@@ -16,7 +15,6 @@
 <ul class="todos-item">
   <li *ngFor="let todo of todos; let i = index" class="todo-list {{ (todo.completed ? 'bg' : '') }}">
     <input type="checkbox" placeholder="todo checked" (click)="toggleDone(i)">
-    <span>{{ i + 1 }}</span>
     <p class="text {{ (todo.completed ? 'done' : '') }}">{{ todo.content }}</p>
     <button class="remove-todo" (click)="deleteTodo(i)">remove</button>
 
